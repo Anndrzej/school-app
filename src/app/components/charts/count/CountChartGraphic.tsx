@@ -25,7 +25,7 @@ const data = [
   },
 ];
 
-const CountGraphic = () => {
+const CountChartGraphic = () => {
   return (
     <div className="relative h-[75%] w-full">
       <ResponsiveContainer width="100%" height="100%">
@@ -55,4 +55,4 @@ const CountGraphic = () => {
   );
 };
 
-export default CountGraphic;
+export default CountChartGraphic;

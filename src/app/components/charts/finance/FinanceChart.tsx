@@ -1,20 +1,19 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import AttendanceChartGraphic from "./AttendanceChartGraphic";
+import FinanceChartGraphic from "./FinanceChartGraphic";
 
-const AttendanceChart = () => {
+const FinanceChart = () => {
   return (
     <div className="size-full rounded-xl bg-white p-4">
       {/* TITLE */}
       <div className="flex items-center justify-between">
-        <h3 className="text-lg font-semibold">Attendance</h3>
+        <h3 className="text-lg font-semibold">Students</h3>
         <Image src="/moreDark.png" alt="More" width={20} height={20} />
       </div>
-      {/* GRAPHIC */}
-      <AttendanceChartGraphic />
+      <FinanceChartGraphic />
     </div>
   );
 };
 
-export default AttendanceChart;
+export default FinanceChart;

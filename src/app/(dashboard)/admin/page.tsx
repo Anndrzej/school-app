@@ -1,7 +1,10 @@
+import EventsCalendar from "@/app/components/events/EventsCalendar";
 import UserCard from "@/app/components/cards/UserCard";
 import AttendanceChart from "@/app/components/charts/attendance/AttendanceChart";
 import CountChart from "@/app/components/charts/count/CountChart";
+import FinanceChart from "@/app/components/charts/finance/FinanceChart";
 import React from "react";
+import Announcement from "@/app/components/announcement/Announcement";
 
 const AdminPage = () => {
   return (
@@ -9,12 +12,12 @@ const AdminPage = () => {
       {/* LEFT */}
       <div className="flex w-full flex-col gap-8 lg:w-2/3">
         {/* USER CARDS */}
-        <div className="flex flex-wrap justify-between gap-4">
+        <ul className="flex flex-wrap justify-between gap-4">
           <UserCard type="student" />
           <UserCard type="teacher" />
           <UserCard type="parent" />
           <UserCard type="staff" />
-        </div>
+        </ul>
         {/* MIDDLE CHARTS */}
         <div className="flex flex-col gap-4 lg:flex-row">
           {/* COUNT CHART */}
@@ -27,9 +30,16 @@ const AdminPage = () => {
           </div>
         </div>
         {/* BOTTOM CHART */}
+        <div className="h-[500px] w-full">
+          {/* FINANCE CHART */}
+          <FinanceChart />
+        </div>
       </div>
       {/* Right */}
-      <div className="w-full lg:w-1/3">r</div>
+      <div className="flex w-full flex-col gap-8 lg:w-1/3">
+        <EventsCalendar />
+        <Announcement />
+      </div>
     </div>
   );
 };

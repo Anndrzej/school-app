@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React from "react";
 import CountChartBottom from "./CountChartBottom";
+import CountChartGraphic from "./CountChartGraphic";
 
 const CountChart = () => {
   return (
@@ -12,7 +13,7 @@ const CountChart = () => {
         <Image src="/moreDark.png" alt="More" width={20} height={20} />
       </div>
       {/* GRAPHIC */}
-      <CountChart />
+      <CountChartGraphic />
       {/* BOTTOM */}
       <CountChartBottom />
     </div>
