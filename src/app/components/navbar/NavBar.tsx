@@ -25,7 +25,7 @@ const NavBar = () => {
             width={20}
             height={20}
           />
-          <div className="absolute -right-3 -top-3 flex size-5 items-center justify-center rounded-full bg-purple-500 text-xs text-white">
+          <div className="bg-purple-500 absolute -right-3 -top-3 flex size-5 items-center justify-center rounded-full text-xs text-white">
             1
           </div>
         </div>

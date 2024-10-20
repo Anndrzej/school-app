@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { MenuSection } from "./types";
 import MenuItemLink from "./MenuItemLink";
+import { role } from "@/lib/data";
 
 interface MenuItemProps {
   item: MenuSection;
@@ -13,9 +14,10 @@ const MenuItem: FC<MenuItemProps> = ({ item }) => {
         <span className="my-4 hidden font-light text-gray-400 lg:block">
           {item.title}
         </span>
-        {item.links.map((link) => (
-          <MenuItemLink key={link.label} link={link} />
-        ))}
+        {item.links.map((link) => {
+          if (link.role.includes(role))
+            return <MenuItemLink key={link.label} link={link} />;
+        })}
       </div>
     </>
   );

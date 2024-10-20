@@ -10,7 +10,7 @@ interface MenuLinkProps {
 const MenuItemLink: FC<MenuLinkProps> = ({ link }) => {
   return (
     <Link
-      className="flex items-center justify-center gap-4 py-2 text-gray-500 lg:justify-start"
+      className="hover:bg-skyLight flex items-center justify-center gap-4 rounded-md px-2 py-2 text-gray-500 lg:justify-start"
       href={link.href}
       key={link.label}
     >

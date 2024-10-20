@@ -1,6 +1,6 @@
-import React from "react";
+import React, { FC } from "react";
 
-const Announcement = () => {
+const Announcement: FC = () => {
   return (
     <div className="rounded-md bg-white p-4">
       <div className="flex items-center justify-between">
