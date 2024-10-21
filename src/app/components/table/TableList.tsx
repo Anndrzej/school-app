@@ -1,3 +1,4 @@
+"use client";
 import React, { FC } from "react";
 import { TableTypes } from "./types";
 
@@ -6,7 +7,8 @@ interface TableListProps {
 }
 
 const TableList: FC<TableListProps> = ({ column }) => {
-  return <th>{column.header}</th>;
+  console.log(column);
+  return <th className={column.className}>{column.header}</th>;
 };
 
 export default TableList;
