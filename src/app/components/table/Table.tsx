@@ -1,11 +1,35 @@
 import React, { FC } from "react";
 import TableList from "./TableList";
-import { Parent, Student, TableTypes, Teacher } from "./types";
 import TableRow from "./TableRow";
+import {
+  Assignment,
+  Class,
+  Exam,
+  Lesson,
+  Parent,
+  Student,
+  Subject,
+  TableTypes,
+  Teacher,
+  Result,
+  Event,
+  Announcement,
+} from "./types";
 
 interface TableTypesProps {
   columns: TableTypes[];
-  data: Teacher[] | Student[] | Parent[];
+  data:
+    | Teacher[]
+    | Student[]
+    | Parent[]
+    | Subject[]
+    | Class[]
+    | Lesson[]
+    | Exam[]
+    | Assignment[]
+    | Result[]
+    | Event[]
+    | Announcement[];
 }
 
 const Table: FC<TableTypesProps> = ({ columns, data }) => {
