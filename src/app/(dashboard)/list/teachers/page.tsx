@@ -49,7 +49,7 @@ const TeacherListPage = () => {
         <h1 className="hidden text-lg font-semibold md:block">All Teachers</h1>
         <div className="flex w-full flex-col items-center gap-4 md:w-auto md:flex-row">
           <TableSearch />
-          <TableControls />
+          <TableControls table="teacher" />
         </div>
       </div>
       {/* LIST */}

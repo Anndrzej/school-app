@@ -16,6 +16,7 @@ import {
 } from "./types";
 import Link from "next/link";
 import { role } from "@/lib/data";
+import FormModal from "../modal/FormModal";
 
 interface TablerRowProps {
   item:
@@ -135,9 +136,7 @@ const TableRow: FC<TablerRowProps> = ({ item }) => {
             <Image src="/view.png" alt="View" width={16} height={16} />
           </Link>
           {role === "admin" && (
-            <button className="flex size-7 items-center justify-center rounded-full bg-purple">
-              <Image src="/delete.png" alt="View" width={16} height={16} />
-            </button>
+            <FormModal table="teacher" type="delete" id={1} />
           )}
         </div>
       </td>

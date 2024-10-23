@@ -37,7 +37,7 @@ const AnnouncementListPage = () => {
         </h1>
         <div className="flex w-full flex-col items-center gap-4 md:w-auto md:flex-row">
           <TableSearch />
-          <TableControls />
+          <TableControls table="student" />
         </div>
       </div>
       {/* LIST */}

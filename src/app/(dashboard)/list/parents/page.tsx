@@ -40,7 +40,7 @@ const ParentListPage = () => {
         <h1 className="hidden text-lg font-semibold md:block">All Parents</h1>
         <div className="flex w-full flex-col items-center gap-4 md:w-auto md:flex-row">
           <TableSearch />
-          <TableControls />
+          <TableControls table="parent" />
         </div>
       </div>
       {/* LIST */}

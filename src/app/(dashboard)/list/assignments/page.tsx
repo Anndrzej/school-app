@@ -30,7 +30,7 @@ const columns = [
   },
 ];
 
-const ClassListPage = () => {
+const AssignmentsListPage = () => {
   return (
     <div className="m-4 mt-0 flex-1 rounded-md bg-white p-4">
       {/* TOP */}
@@ -40,7 +40,7 @@ const ClassListPage = () => {
         </h1>
         <div className="flex w-full flex-col items-center gap-4 md:w-auto md:flex-row">
           <TableSearch />
-          <TableControls />
+          <TableControls table="teacher" />
         </div>
       </div>
       {/* LIST */}
@@ -51,4 +51,4 @@ const ClassListPage = () => {
   );
 };
 
-export default ClassListPage;
+export default AssignmentsListPage;
