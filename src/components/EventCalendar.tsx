@@ -1,16 +1,16 @@
 "use client";
-import React, { useState } from "react";
+
+import Image from "next/image";
+import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import { EventType } from "./types";
-import Event from "./Event";
-import Image from "next/image";
 
 type ValuePiece = Date | null;
 
 type Value = ValuePiece | [ValuePiece, ValuePiece];
 
-const events: EventType[] = [
+// TEMPORARY
+const events = [
   {
     id: 1,
     title: "Lorem ipsum dolor",
@@ -31,23 +31,32 @@ const events: EventType[] = [
   },
 ];
 
-const EventsCalendar = () => {
+const EventCalendar = () => {
   const [value, onChange] = useState<Value>(new Date());
 
   return (
     <div className="rounded-md bg-white p-4">
-      <Calendar locale="en-EN" onChange={onChange} value={value} />
+      <Calendar onChange={onChange} value={value} />
       <div className="flex items-center justify-between">
-        <h3 className="my-4 text-lg font-semibold">Events</h3>
-        <Image src="/moreDark.png" alt="More" width={20} height={20} />
+        <h1 className="my-4 text-xl font-semibold">Events</h1>
+        <Image src="/moreDark.png" alt="" width={20} height={20} />
       </div>
-      <ul className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4">
         {events.map((event) => (
-          <Event key={event.id} event={event} />
+          <div
+            className="even:border-t-puple rounded-md border-2 border-t-4 border-gray-100 p-5 odd:border-t-sky"
+            key={event.id}
+          >
+            <div className="flex items-center justify-between">
+              <h1 className="font-semibold text-gray-600">{event.title}</h1>
+              <span className="text-xs text-gray-300">{event.time}</span>
+            </div>
+            <p className="mt-2 text-sm text-gray-400">{event.description}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
 
-export default EventsCalendar;
+export default EventCalendar;
