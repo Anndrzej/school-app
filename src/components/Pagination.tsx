@@ -1,4 +1,5 @@
 "use client";
+
 import { ITEM_PER_PAGE } from "@/lib/settings";
 import { useRouter } from "next/navigation";
 
@@ -18,7 +19,9 @@ const Pagination = ({ page, count }: { page: number; count: number }) => {
       <button
         disabled={!hasPrev}
         className="rounded-md bg-slate-200 px-4 py-2 text-xs font-semibold disabled:cursor-not-allowed disabled:opacity-50"
-        onClick={() => changePage(page - 1)}
+        onClick={() => {
+          changePage(page - 1);
+        }}
       >
         Prev
       </button>
@@ -29,9 +32,13 @@ const Pagination = ({ page, count }: { page: number; count: number }) => {
             const pageIndex = index + 1;
             return (
               <button
-                key={index}
-                className={`rounded-sm px-2 ${page === pageIndex ? "bg-sky" : ""}`}
-                onClick={() => changePage(pageIndex)}
+                key={pageIndex}
+                className={`rounded-sm px-2 ${
+                  page === pageIndex ? "bg-sky" : ""
+                }`}
+                onClick={() => {
+                  changePage(pageIndex);
+                }}
               >
                 {pageIndex}
               </button>
@@ -40,9 +47,11 @@ const Pagination = ({ page, count }: { page: number; count: number }) => {
         )}
       </div>
       <button
-        disabled={!hasNext}
-        onClick={() => changePage(page + 1)}
         className="rounded-md bg-slate-200 px-4 py-2 text-xs font-semibold disabled:cursor-not-allowed disabled:opacity-50"
+        disabled={!hasNext}
+        onClick={() => {
+          changePage(page + 1);
+        }}
       >
         Next
       </button>
